@@ -8,7 +8,7 @@ public class unit : MonoBehaviour
     [SerializeField] 
     private float tilesize;
     public float speed;
-    public Vector3 direction=new Vector3 (0,0,0);
+    public Vector3 direction;
 
     // Start is called before the first frame update
     void Start()
