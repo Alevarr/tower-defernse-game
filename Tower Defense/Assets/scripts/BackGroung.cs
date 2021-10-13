@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class BackGroung : MonoBehaviour
 {
-    public Tilemap tilemap;
+    public Tilemap tilemapback;
     public Tilemap tilemapRoad;
 
     public Tile free;
@@ -26,7 +26,7 @@ public class BackGroung : MonoBehaviour
         {
             for (int j = 0; j < sizeBackX; j++)
             {
-                tilemap.SetTile(new Vector3Int(j, i, 0), back[Random.Range(0, 4)]);
+                tilemapback.SetTile(new Vector3Int(j, i, 0), back[Random.Range(0,back.Length)]);
             }
         }
         int beg = 1;
