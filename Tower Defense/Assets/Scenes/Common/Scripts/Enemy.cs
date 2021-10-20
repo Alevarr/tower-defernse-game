@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     public float speed = 10f;
 
     private Transform destination;
+
     private int waypointIndex = 0;
+    //private hitsToDie = 2;
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+
         Vector3 dir = destination.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
@@ -39,6 +42,11 @@ public class Enemy : MonoBehaviour
 
         waypointIndex++;
         destination = Waypoints.points[waypointIndex];
+
+    }
+
+    void checkIfHit()
+    {
 
     }
 
