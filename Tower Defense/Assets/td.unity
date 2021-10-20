@@ -5735,7 +5735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3070207082544380971, guid: 7d357a367fb26cc49b2cd5e26c8a874c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6199985
+      value: -28.8
       objectReference: {fileID: 0}
     - target: {fileID: 3070207082544380971, guid: 7d357a367fb26cc49b2cd5e26c8a874c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9926,7 +9926,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137769522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 139e8dc5212773848ae2ae1a38f96861, type: 3}
   m_Name: 
@@ -10003,7 +10003,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137769522}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 26e357794f6f5644ca435bc5e6cd22f2, type: 3}
@@ -18194,11 +18194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3070207082544380971, guid: 7d357a367fb26cc49b2cd5e26c8a874c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.77
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: 3070207082544380971, guid: 7d357a367fb26cc49b2cd5e26c8a874c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.98
+      value: -39.4
       objectReference: {fileID: 0}
     - target: {fileID: 3070207082544380971, guid: 7d357a367fb26cc49b2cd5e26c8a874c, type: 3}
       propertyPath: m_LocalPosition.z
