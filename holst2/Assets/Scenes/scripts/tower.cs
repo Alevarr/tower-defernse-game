@@ -31,10 +31,12 @@ public class tower : MonoBehaviour
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * rotspeed).eulerAngles;         //lookRotation.eulerAngles; 
         partToRotate.rotation = Quaternion.Euler(0f,0f,rotation.z);
         partToRotate.LookAt(target);*/
-        partToRotate.LookAt(target);
-        var eulers = partToRotate.eulerAngles;
-        eulers.y = 0;
-        partToRotate.rotation = Quaternion.EulerAngles(eulers);
+        partToRotate.LookAt(target, new Vector3(0, 0, 1));
+        //var eulers = partToRotate.eulerAngles;
+        //eulers.y = 0;
+        //partToRotate.eulerAngles = eulers;
+
+
 
         if (fireCountDown <= 0f) 
         {
