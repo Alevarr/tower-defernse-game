@@ -11,9 +11,10 @@ public class enemy : MonoBehaviour
     private Transform destination;
     private int waypointIndex = 0;
     public HealthBar healthBar;
-    public int damage = 10;
-    public FinishPoint finishPoint;
-    public GameObject finishPointt;
+    public float damage = 10f;
+    //public FinishPoint finishPoint;
+    //public GameObject finishPointt;
+    public GameObject finishPoint;
 
 
     void Start()
@@ -29,20 +30,24 @@ public class enemy : MonoBehaviour
         Vector3 dir = destination.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
-        //if (Vector3.Distance(transform.position, new Vector3(70.3f, 5.13f, -1f)) <= 1f)
-        //{
-        //    var f = finishPointt.GetComponent<FinishPoint>();
-        //    f.GetDamage(damage);
-        //    Destroy(gameObject);
-        //}
+        if (Vector3.Distance(transform.position, finishPoint.transform.position) <= 1f)
+        {
+           
+            DealDamage();
+            Destroy(gameObject);
+        }
 
         if (Vector3.Distance(transform.position, destination.position) <= 0.2f)
         {
             GetNextWaypoint();
         }
+    }
 
-
-
+    void DealDamage()
+    {
+        Debug.Log("Damage to deal: " + damage);
+        //FinishPoint f = FinishPoint.GetComponent<FinishPoint>();
+        FinishPoint.GetDamage(damage);
     }
 
     void GetNextWaypoint()
