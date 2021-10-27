@@ -24,7 +24,7 @@ public class FinishPoint : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy();
+            Destroy(gameObject);
         }
     }
 
