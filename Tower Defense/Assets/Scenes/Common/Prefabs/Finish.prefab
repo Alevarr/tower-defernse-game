@@ -127,9 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decb7c7d57f90ce4190715af057ae317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainHealthBar: {fileID: 8509477535230945449}
-  finishPoint: {fileID: 7935614544906512546}
-  hp: 100
+  HB: {fileID: 8509477535230945449}
+  mh: 20
 --- !u!1001 &7935614544899373696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,11 +166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744946778329725458, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 6.2455
       objectReference: {fileID: 0}
     - target: {fileID: 1744946778329725458, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 1.9654
       objectReference: {fileID: 0}
     - target: {fileID: 1744946778329725458, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -203,11 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744946778329725458, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.22
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1744946778329725458, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5
+      value: 2.79
       objectReference: {fileID: 0}
     - target: {fileID: 1744946778329725458, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -233,6 +232,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1744946778867646142, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.17136429
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744946778867646142, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8867924
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744946778867646142, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.12967247
+      objectReference: {fileID: 0}
     - target: {fileID: 1744946779914048040, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_SizeDelta.x
       value: 5.8355
@@ -243,11 +254,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744946779914048040, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.09
+      value: 0.00000008940697
       objectReference: {fileID: 0}
     - target: {fileID: 1744946779914048040, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.65
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744946779914048042, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
+      propertyPath: m_Value
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}

@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     private int waypointIndex = 0;
     //private hitsToDie = 2;
+    public Transform FinishPoint;
+    //private FinishPoint finishPoint = FinishPoint.GetComponent<Enemy>();
 
     void Start()
     {

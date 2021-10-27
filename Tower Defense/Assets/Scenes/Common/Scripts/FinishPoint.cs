@@ -5,27 +5,39 @@ using UnityEngine;
 public class FinishPoint : MonoBehaviour
 {
 
-    public HealthBar mainHealthBar;
-    public Transform finishPoint;
-    public int hp = 100;
+    public HealthBar HB;
+    private static HealthBar healthBar;
+    //private float hp;
+    public float mh;
+    public static float maxhp;
+    private static float hp;
     // Start is called before the first frame update
     void Start()
     {
-        mainHealthBar.SetMaxHealth(hp);
+        healthBar = HB;
+        maxhp = mh;
+        hp = maxhp;
+        healthBar.SetMaxHealth(maxhp);
     }
 
-    public void GetDamage(int damage)
+    void Update()
     {
-        hp -= damage;
-        mainHealthBar.SetHealth(hp);
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            Destroy();
         }
+    }
+
+    public static void GetDamage(float damage)
+    {
+        hp -= damage;
+        healthBar.SetHealth(hp);
+
     }
 
     public Vector3 GetPosition()
     {
         return transform.position;
     }
+
 }
