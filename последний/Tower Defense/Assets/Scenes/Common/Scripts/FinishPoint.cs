@@ -10,11 +10,13 @@ public class FinishPoint : MonoBehaviour
     private static HealthBar healthBar;
     //private float hp;
     public float mh;
+    public AudioSource nahui;
     public static float maxhp;
     private static float hp;
     // Start is called before the first frame update
     void Start()
     {
+        nahui.Play();
         healthBar = HB;
         maxhp = mh;
         hp = maxhp;

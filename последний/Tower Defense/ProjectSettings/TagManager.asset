@@ -9,6 +9,7 @@ TagManager:
   - up
   - left
   - Enemy
+  - money
   layers:
   - Default
   - TransparentFX

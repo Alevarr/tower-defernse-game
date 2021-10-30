@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemy : MonoBehaviour
 {
     public float hp;
     public float maxhp = 100f;
-
+    private money money;
+    public int pay=10;
+    public AudioSource ded;
     public float speed = 10f;
     private Transform destination;
     private int waypointIndex = 0;
@@ -19,6 +22,8 @@ public class enemy : MonoBehaviour
 
     void Start()
     {
+        money = GameObject.FindWithTag("money").GetComponent<money>() ;
+        ded.Play();
         destination = Waypoints.points[0];
         hp = maxhp;
         healthBar.SetMaxHealth(maxhp);
@@ -68,6 +73,12 @@ public class enemy : MonoBehaviour
     {
         hp -= damage;
         healthBar.SetHealth(hp);
-        if (hp <= 0) { Destroy(gameObject); }
+        if (hp <= 0) 
+        {
+            Destroy(gameObject);
+            money.earnMoney(pay);
+            
+
+        }
     }
 }

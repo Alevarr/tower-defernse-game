@@ -5,13 +5,25 @@ using UnityEngine;
 public class cubuki : MonoBehaviour
 {
     public Color hoverColor;
+    public Color NoColor;
     private SpriteRenderer rend;
+    private money money;
     private GameObject turret;
     public GameObject TBM;
     private Color startColor;
-    void OnMouseEnter()
+    public GameObject ST;
+    void OnMouseOver()
     {
-        rend.color = hoverColor;
+        if (TBM.GetComponent<TowerButtonManager>().SelectedTowerObj!=null)
+        {
+            ST = TBM.GetComponent<TowerButtonManager>().SelectedTowerObj;
+            if (money.moneyint >= ST.GetComponent<tower>().cost)
+            { rend.color = hoverColor; }
+            else
+            {
+                rend.color = NoColor;
+            }
+        }
     }
     void OnMouseExit()
     {
@@ -19,17 +31,18 @@ public class cubuki : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (turret != null) 
+        if (turret != null || TBM.GetComponent<TowerButtonManager>().SelectedTowerObj == null || money.moneyint < ST.GetComponent<tower>().cost) 
         {
-            print("NO");
             return;
         }
         turret = TBM.GetComponent<TowerButtonManager>().SelectedTowerObj;
         Instantiate(turret, transform.position, transform.rotation);
+        money.earnMoney(-turret.GetComponent<tower>().cost);
     }
         // Start is called before the first frame update
         void Start()
     {
+        money = GameObject.FindWithTag("money").GetComponent<money>();
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.color;
     }

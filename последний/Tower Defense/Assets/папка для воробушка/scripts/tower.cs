@@ -13,6 +13,7 @@ public class tower : MonoBehaviour
     private float fireCountDown = 0f;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public int cost;
 
 
     // Start is called before the first frame update
