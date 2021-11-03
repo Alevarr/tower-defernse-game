@@ -50,7 +50,7 @@ public class enemy : MonoBehaviour
 
     void DealDamage()
     {
-        Debug.Log("Damage to deal: " + damage);
+        //Debug.Log("Damage to deal: " + damage);
         //FinishPoint f = FinishPoint.GetComponent<FinishPoint>();
         FinishPoint.GetDamage(damage);
     }
