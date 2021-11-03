@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class tower : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject rangeCircle;
+    private GameObject upTower;
+    public UpdateTower updateTowers;
+    public int number=0;
     public Transform target;
     public GameObject targetObj;
-    public Transform partToRotate; 
+    public Transform partToRotate;
     public float range = 15f;
-    public float rotspeed = 10f; 
-    public float reload=1f;
+    public float rotspeed = 10f;
+    public float reload = 1f;
     private float fireCountDown = 0f;
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -19,13 +24,17 @@ public class tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rangeCircle.transform.localScale = new Vector3(1f, 1f, 0f) * range;
+        upTower = GameObject.Find("TowerUpgrade");
+        updateTowers = upTower.GetComponent<UpdateTower>();
+
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target == null) 
+        if (target == null)
         {
             return;
         }
@@ -34,11 +43,11 @@ public class tower : MonoBehaviour
         Vector3 rotation = lookRotation.eulerAngles;
         if (target.position.x < transform.position.x)
         { partToRotate.rotation = Quaternion.Euler(0f, 0f, 180 + rotation.x); }
-        else 
+        else
         {
-            partToRotate.rotation = Quaternion.Euler(0f, 0f, 360-rotation.x);
+            partToRotate.rotation = Quaternion.Euler(0f, 0f, 360 - rotation.x);
         }
-        if (fireCountDown <= 0f) 
+        if (fireCountDown <= 0f)
         {
             Shoot();
             fireCountDown = reload;
@@ -47,7 +56,7 @@ public class tower : MonoBehaviour
 
 
     }
-    void OnDrawGizmosSelected() 
+    void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
@@ -71,21 +80,26 @@ public class tower : MonoBehaviour
                 target = nearestEnemy.transform;
                 targetObj = nearestEnemy;
             }
-            else 
+            else
             {
                 target = null;
                 targetObj = null;
             }
         }
     }
-    void Shoot() 
+    void Shoot()
     {
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet bullet = bulletGo.GetComponent<bullet>();
-        if (bullet != null) 
+        if (bullet != null)
         {
-            bullet.Seek(target,targetObj);
-        } 
-          
+            bullet.Seek(target, targetObj);
+        }
+
     }
+    void OnMouseDown()
+    {
+        updateTowers.DrawRange(number);
+    }
+
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class cubuki : MonoBehaviour
 {
+    private GameObject upTower;
+    private int number;
+    private UpdateTower NewTowerInOurParty;
     public Color hoverColor;
     public Color NoColor;
     private SpriteRenderer rend;
@@ -36,12 +39,17 @@ public class cubuki : MonoBehaviour
             return;
         }
         turret = TBM.GetComponent<TowerButtonManager>().SelectedTowerObj;
-        Instantiate(turret, transform.position, transform.rotation);
         money.earnMoney(-turret.GetComponent<tower>().cost);
+        var _turret=(GameObject)Instantiate(turret, transform.position-new Vector3(0,0,0.00000001f), transform.rotation);
+        number = NewTowerInOurParty.numberTower;
+        _turret.GetComponent<tower>().number = number;
+        NewTowerInOurParty.PullTowers(_turret);
     }
         // Start is called before the first frame update
         void Start()
     {
+        upTower = GameObject.Find("TowerUpgrade");
+        NewTowerInOurParty = upTower.GetComponent<UpdateTower>();
         money = GameObject.FindWithTag("money").GetComponent<money>();
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.color;
