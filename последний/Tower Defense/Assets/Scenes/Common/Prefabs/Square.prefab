@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65d181478817d94b9e3487cb0716064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upTower: {fileID: 0}
   hoverColor: {r: 0.3155927, g: 0.8490566, b: 0.3979774, a: 1}
   NoColor: {r: 1, g: 0, b: 0, a: 1}
   TBM: {fileID: 0}
+  ST: {fileID: 0}
