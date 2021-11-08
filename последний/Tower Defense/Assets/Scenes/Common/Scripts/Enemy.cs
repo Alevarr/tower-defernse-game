@@ -23,6 +23,7 @@ public class enemy : MonoBehaviour
     void Start()
     {
         money = GameObject.FindWithTag("money").GetComponent<money>() ;
+        finishPoint = GameObject.Find("Finish(Clone)");
         ded.Play();
         destination = Waypoints.points[0];
         hp = maxhp;
