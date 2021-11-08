@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7228356296835064800}
   - component: {fileID: 3380534537443680049}
-  - component: {fileID: 6560700892707871629}
+  - component: {fileID: 2583372884595187383}
   - component: {fileID: 7685802280964087172}
   m_Layer: 0
   m_Name: EnemyWithHealthBar
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6560700892707871629
+--- !u!114 &2583372884595187383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6220369638109661753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192d0cf8071833c4594a0f61c9b904ad, type: 3}
+  m_Script: {fileID: 11500000, guid: e9d0aee501bf8d34095191cafcb0a032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   speed: 10
   healthBar: {fileID: 5338215172204199912}
   damage: 10
-  finishPoint: {fileID: 7935614544906512547, guid: b66bd063acc831c4ea10e94d5cb0b017, type: 3}
+  finishPoint: {fileID: 0}
 --- !u!82 &7685802280964087172
 AudioSource:
   m_ObjectHideFlags: 0
