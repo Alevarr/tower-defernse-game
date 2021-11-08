@@ -23,6 +23,9 @@ public class WaveSpawner : MonoBehaviour
     
     void Start()
     {
+        //enemyArray[0] = enemyNormalPrefab;
+        //enemyArray[1] = enemyNormalPrefab;
+        //enemyArray[2] = enemyNormalPrefab;
         countdown = TimeBetweenWaves();
     }
     void Update()
@@ -80,6 +83,6 @@ public class WaveSpawner : MonoBehaviour
 
     public static void SkipToNextWave()
     {
-        Debug.Log("Success");
+        countdown = 0;
     }
 }
