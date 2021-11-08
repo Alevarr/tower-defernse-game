@@ -8,6 +8,7 @@ public class UpdateTower : MonoBehaviour
     public GameObject SelectedTowerOnScene;
     public GameObject pass;
     public int numberTower = 0;
+    public int k = 0;
     public int beforeNumberTower = 0;
     private GameObject rC;
     // Start is called before the first frame update
@@ -23,8 +24,16 @@ public class UpdateTower : MonoBehaviour
     public void DrawRange(int number)
     {
         rC.SetActive(false);
-        rC = towers[number].GetComponent<tower>().rangeCircle;
-        rC.SetActive(true);
+        if (rC != towers[number].GetComponent<tower>().rangeCircle || k==1)
+        {
+            rC = towers[number].GetComponent<tower>().rangeCircle;
+            rC.SetActive(true);
+            k = 0;
+        }
+        else 
+        {
+            k += 1;
+        }
     }
 
     // Update is called once per frame

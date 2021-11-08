@@ -7,6 +7,7 @@ public class tower : MonoBehaviour
     [SerializeField]
     public GameObject rangeCircle;
     private GameObject upTower;
+    public LayerMask road;
     public UpdateTower updateTowers;
     public int number=0;
     public Transform target;
@@ -27,7 +28,9 @@ public class tower : MonoBehaviour
         rangeCircle.transform.localScale = new Vector3(1f, 1f, 0f) * range;
         upTower = GameObject.Find("TowerUpgrade");
         updateTowers = upTower.GetComponent<UpdateTower>();
-
+        GetComponent<CircleCollider2D>().radius = range;
+        print(PowerTower());
+        GetComponent<CircleCollider2D>().enabled = false;
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
     }
 
@@ -100,6 +103,11 @@ public class tower : MonoBehaviour
     void OnMouseDown()
     {
         updateTowers.DrawRange(number);
+    }
+    int PowerTower() 
+    {
+        Collider2D[] tochki = Physics2D.OverlapCircleAll(transform.position, range, road);
+        return tochki.Length;
     }
 
 }

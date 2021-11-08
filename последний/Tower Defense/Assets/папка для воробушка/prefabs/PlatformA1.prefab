@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2803167369972325400}
   - component: {fileID: 2803167369972325401}
   - component: {fileID: 9189394761276971641}
+  - component: {fileID: 1680014599754989886}
   m_Layer: 0
   m_Name: PlatformA1
   m_TagString: Untagged
@@ -49,6 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeCircle: {fileID: 6846793577918305016}
+  road:
+    serializedVersion: 2
+    m_Bits: 8
   updateTowers: {fileID: 0}
   number: 0
   target: {fileID: 0}
@@ -86,6 +90,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.15, y: 2.15}
   m_EdgeRadius: 0
+--- !u!58 &1680014599754989886
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2803167369972325403}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2803167370214643735
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6846793577918305016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 5.346, y: 5.346, z: 5.346}
   m_Children: []
   m_Father: {fileID: 2803167369972325400}

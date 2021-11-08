@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 73b5888404a8fd64c9200cf4b14ebd5f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - tochka: {fileID: 5084638974215830603, guid: ea637b243d8e38848b41b71494928178, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

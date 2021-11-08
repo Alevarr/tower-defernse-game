@@ -78,7 +78,6 @@ public class WaveSpawner : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log(n);
     }
 
     public static void SkipToNextWave()
