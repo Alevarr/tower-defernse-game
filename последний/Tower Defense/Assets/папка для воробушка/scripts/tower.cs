@@ -20,6 +20,10 @@ public class tower : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public int cost;
+    public int damage;
+    public int upgradeCost = 0;
+    public string comentUpgrade;
+
 
 
     // Start is called before the first frame update
@@ -94,6 +98,7 @@ public class tower : MonoBehaviour
     {
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet bullet = bulletGo.GetComponent<bullet>();
+        bullet.damage = damage;
         if (bullet != null)
         {
             bullet.Seek(target, targetObj);
@@ -106,7 +111,7 @@ public class tower : MonoBehaviour
     }
     int PowerTower() 
     {
-        Collider2D[] tochki = Physics2D.OverlapCircleAll(transform.position, range, road);
+        Collider2D[] tochki = Physics2D.OverlapCircleAll(transform.position, range/2, road);
         return tochki.Length;
     }
 

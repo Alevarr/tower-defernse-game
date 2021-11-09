@@ -43,12 +43,4 @@ public class bullet : MonoBehaviour
         }
         Destroy(gameObject);
     }
-    /*void OnCollisionEnter2D(Collision2D collision) 
-    {
-        var enemy=collision.collider.GetComponent<enemy>();
-        if (enemy) 
-        {
-            enemy.TakeHit(damage);
-        }
-    }*/
 }

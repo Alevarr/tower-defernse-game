@@ -11,10 +11,14 @@ public class cubuki : MonoBehaviour
     public Color NoColor;
     private SpriteRenderer rend;
     private money money;
-    private GameObject turret;
+    public GameObject turret;
     public GameObject TBM;
     private Color startColor;
     public GameObject ST;
+    public GameObject[] platformA;
+    public GameObject[] platformB;
+    public int k = 1;
+    public int allSpendedMoney = 0;
     void OnMouseOver()
     {
         if (TBM.GetComponent<TowerButtonManager>().SelectedTowerObj!=null)
@@ -43,7 +47,30 @@ public class cubuki : MonoBehaviour
         var _turret=(GameObject)Instantiate(turret, transform.position-new Vector3(0,0,0.00000001f), transform.rotation);
         number = NewTowerInOurParty.numberTower;
         _turret.GetComponent<tower>().number = number;
-        NewTowerInOurParty.PullTowers(_turret);
+        NewTowerInOurParty.PullTowers(_turret,this);
+        allSpendedMoney += _turret.GetComponent<tower>().cost;
+    }
+    public void UpgradeTower() 
+    {
+        switch (turret.name)
+        {
+            case "PlatformB":
+                Destroy(NewTowerInOurParty.towers[number]);
+                var _turret = (GameObject)Instantiate(platformB[k], transform.position - new Vector3(0, 0, 0.00000001f), transform.rotation);
+                _turret.GetComponent<tower>().number = number;
+                NewTowerInOurParty.towers[number] = _turret;
+                NewTowerInOurParty.DrawRange(number);
+                k += 1;
+                break;
+            case "PlatformA1":
+                Destroy(NewTowerInOurParty.towers[number]);
+                var _turretA = (GameObject)Instantiate(platformA[k], transform.position - new Vector3(0, 0, 0.00000001f), transform.rotation);
+                _turretA.GetComponent<tower>().number = number;
+                NewTowerInOurParty.towers[number] = _turretA;
+                NewTowerInOurParty.DrawRange(number);
+                k += 1;
+                break;
+        }
     }
         // Start is called before the first frame update
         void Start()

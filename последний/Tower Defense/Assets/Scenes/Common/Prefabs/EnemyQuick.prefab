@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  maxhp: 100
+  maxhp: 50
   pay: 10
   ded: {fileID: 7685802280964087172}
-  speed: 10
+  speed: 15
   healthBar: {fileID: 5338215172204199912}
   damage: 10
   finishPoint: {fileID: 0}
