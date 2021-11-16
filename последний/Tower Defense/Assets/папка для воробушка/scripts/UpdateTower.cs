@@ -9,6 +9,7 @@ public class UpdateTower : MonoBehaviour
     public List <cubuki> cubiks = new List <cubuki>();
     public GameObject SelectedTowerOnScene;
     public GameObject pass;
+    public ui powertower;
     public int numberTower = 0;
     public int k = 0;
     public int beforeNumberTower = 0;
@@ -78,6 +79,8 @@ public class UpdateTower : MonoBehaviour
     }
     public void DeleteTower()
     {
+        powertower = GameObject.Find("allUI").GetComponent<ui>();
+        powertower.UpdateTowerPower(-towers[decidedTower].GetComponent<tower>().PowerThisTower());
         money.earnMoney(cubiks[decidedTower].allSpendedMoney / 2);
         cubiks[decidedTower].turret = null;
         Destroy(towers[decidedTower]);

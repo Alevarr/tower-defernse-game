@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class tower : MonoBehaviour
 {
     [SerializeField]
     public GameObject rangeCircle;
     private GameObject upTower;
+    public ui powertower;
     public LayerMask road;
     public UpdateTower updateTowers;
     public int number=0;
@@ -29,13 +31,15 @@ public class tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        powertower = GameObject.Find("allUI").GetComponent<ui>();
         rangeCircle.transform.localScale = new Vector3(1f, 1f, 0f) * range;
         upTower = GameObject.Find("TowerUpgrade");
         updateTowers = upTower.GetComponent<UpdateTower>();
-        GetComponent<CircleCollider2D>().radius = range;
-        print(PowerTower());
+        GetComponent<CircleCollider2D>().radius = range/2;
+        powertower.UpdateTowerPower(PowerThisTower());
         GetComponent<CircleCollider2D>().enabled = false;
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
+        
     }
 
     // Update is called once per frame
@@ -63,12 +67,12 @@ public class tower : MonoBehaviour
 
 
     }
-    void OnDrawGizmosSelected()
+    /*void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
 
-    }
+    }*/
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -109,10 +113,17 @@ public class tower : MonoBehaviour
     {
         updateTowers.DrawRange(number);
     }
-    int PowerTower() 
+    public int PowerThisTower()
     {
-        Collider2D[] tochki = Physics2D.OverlapCircleAll(transform.position, range/2, road);
-        return tochki.Length;
+        int k = 0;
+        GameObject[] tochki = GameObject.FindGameObjectsWithTag("road");
+        foreach (GameObject tochka in tochki)
+        {
+            float distanceToTochka = Vector3.Distance(new Vector3(transform.position.x, transform.position.y, 0f), new Vector3(tochka.transform.position.x, tochka.transform.position.y, 0f));
+            if (distanceToTochka <= range) { k++; }
+        }
+        int power = (int)Mathf.Round(((k-6)%61/15+1)*damage*(1f/reload)/100); //(k-6) -"количество точек" (damage*(1f/reload)) - урон в секунду деление на 10 чтобы наладить размерность
+        return power;
     }
 
 }

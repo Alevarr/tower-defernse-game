@@ -104,6 +104,7 @@ MonoBehaviour:
   speed: 10
   healthBar: {fileID: 5338215172204199912}
   damage: 10
+  power: 5
   finishPoint: {fileID: 0}
 --- !u!82 &7685802280964087172
 AudioSource:

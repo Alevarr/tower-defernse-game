@@ -3,7 +3,15 @@ guid: 7c7d2ad76de85b04fbb1257695bae3e6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - rangeCircle: {instanceID: 0}
+  - towerPower: {fileID: 6500804789955887145, guid: a907990000e42634e91b2ee462604da5, type: 3}
+  - updateTowers: {instanceID: 0}
+  - target: {instanceID: 0}
+  - targetObj: {instanceID: 0}
+  - partToRotate: {instanceID: 0}
+  - bulletPrefab: {instanceID: 0}
+  - firePoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

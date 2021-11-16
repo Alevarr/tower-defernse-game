@@ -3,7 +3,12 @@ guid: 38d9131c0369a2742bf664e639148929
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemyNormalPrefab: {fileID: 6220369638109661753, guid: 79e4f2c7882e88b4db355dc3dd6540c2, type: 3}
+  - enemyHeavyPrefab: {fileID: 6220369638109661753, guid: 7d56242c4c7caf146af1d27a44472131, type: 3}
+  - enemyQuickPrefab: {fileID: 6220369638109661753, guid: d7ae442ab72c79940b6c140eae1e9c30, type: 3}
+  - WaveNumberUI: {instanceID: 0}
+  - NextWaveButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

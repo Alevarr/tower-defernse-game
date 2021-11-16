@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2803167369972325400}
   - component: {fileID: 2803167369972325401}
   - component: {fileID: 9189394761276971641}
-  - component: {fileID: 1680014599754989886}
+  - component: {fileID: 6761585364623128863}
   m_Layer: 0
   m_Name: PlatformA1 7
   m_TagString: Untagged
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeCircle: {fileID: 6846793577918305016}
+  powertower: {fileID: 0}
   road:
     serializedVersion: 2
     m_Bits: 8
@@ -182,7 +183,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.15, y: 2.15}
   m_EdgeRadius: 0
---- !u!58 &1680014599754989886
+--- !u!58 &6761585364623128863
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

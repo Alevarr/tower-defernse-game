@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2803167369972325400}
   - component: {fileID: 2803167369972325401}
   - component: {fileID: 9189394761276971641}
-  - component: {fileID: 1680014599754989886}
+  - component: {fileID: 4060311283784987781}
   m_Layer: 0
   m_Name: PlatformA1 8
   m_TagString: Untagged
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeCircle: {fileID: 6846793577918305016}
+  powertower: {fileID: 0}
   road:
     serializedVersion: 2
     m_Bits: 8
@@ -266,7 +267,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.15, y: 2.15}
   m_EdgeRadius: 0
---- !u!58 &1680014599754989886
+--- !u!58 &4060311283784987781
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1069,6 +1070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3486431361344967276}
   - component: {fileID: 1212156776010746394}
+  - component: {fileID: 1632334674496987361}
   m_Layer: 0
   m_Name: drawRange
   m_TagString: Untagged
@@ -1141,6 +1143,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1632334674496987361
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846793577918305016}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000007450581, y: -0.000000029802322}
+  serializedVersion: 2
+  m_Radius: 0.5000001
 --- !u!1 &7169313949199876771
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ public class enemy : MonoBehaviour
     private int waypointIndex = 0;
     public HealthBar healthBar;
     public float damage = 10f;
+    public int power;
     //public FinishPoint finishPoint;
     //public GameObject finishPointt;
     public GameObject finishPoint;
@@ -51,7 +52,7 @@ public class enemy : MonoBehaviour
 
     void DealDamage()
     {
-        Debug.Log("Damage to deal: " + damage);
+        //Debug.Log("Damage to deal: " + damage);
         //FinishPoint f = FinishPoint.GetComponent<FinishPoint>();
         FinishPoint.GetDamage(damage);
     }

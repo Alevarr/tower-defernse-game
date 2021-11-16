@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5951730285976661455}
   m_Layer: 3
   m_Name: tochka
-  m_TagString: Untagged
+  m_TagString: road
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4154473527222520391
 Transform:
