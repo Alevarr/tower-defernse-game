@@ -26,19 +26,23 @@ public class enemy : MonoBehaviour
     {
         money = GameObject.FindWithTag("money").GetComponent<money>() ;
         finishPoint = GameObject.Find("Finish(Clone)");
-        ded.Play();
         
         hp = maxhp;
         healthBar.SetMaxHealth(maxhp);
         int r = Random.Range(1, 3);
         if (r == 1)
         {
+            Debug.Log("1 route");
             wp = Waypoints.points;
         } else
         {
+            Debug.Log("2 route");
             wp = Waypoints2.points;
             
         }
+
+        Debug.Log(wp.Length);
+
         destination = wp[0];
     }
 
@@ -47,10 +51,9 @@ public class enemy : MonoBehaviour
 
         Vector3 dir = destination.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, finishPoint.transform.position) <= 1f)
-        {
-           
+        Debug.Log(Vector3.Distance(transform.position, finishPoint.transform.position));
+        if (Vector3.Distance(transform.position, finishPoint.transform.position) <= 1.5f)
+        {           
             DealDamage();
             Destroy(gameObject);
         }
@@ -63,8 +66,9 @@ public class enemy : MonoBehaviour
 
     void DealDamage()
     {
-        //Debug.Log("Damage to deal: " + damage);
+        Debug.Log("Damage to deal: " + damage);
         //FinishPoint f = FinishPoint.GetComponent<FinishPoint>();
+
         FinishPoint.GetDamage(damage);
     }
 

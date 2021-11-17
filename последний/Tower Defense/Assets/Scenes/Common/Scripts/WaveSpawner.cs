@@ -9,7 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public GameObject enemyHeavyPrefab;
     public GameObject enemyQuickPrefab;
     private Transform[] enemyArray;//{enemyNormalPrefab, enemyHeavyPrefab, enemyQuickPrefab};
-    public int sumPower=5;
+    public int sumPower = 5;
     public int upNah = 1;
 
     //private Random rnd = new Random();
@@ -18,22 +18,22 @@ public class WaveSpawner : MonoBehaviour
     public Text WaveNumberUI;
     public Button NextWaveButton;
     private static float countdown;
-    static private bool puskaiteKrakena=false;
+    static private bool puskaiteKrakena = false;
     public ui powertower;
     private int fixPower;
-    public float koeffPower=1;
-    public float kolvo=1;
-    public float koeffMaxHP=1;
-    public float koeff=0.001f;
-    public float koeffPay=1;
-    private float koeffPower1=1;
-    private float koeffMaxHP1=1;
-    private float koeffPay1=1;
+    public float koeffPower = 1;
+    public float kolvo = 1;
+    public float koeffMaxHP = 1;
+    public float koeff = 0.001f;
+    public float koeffPay = 1;
+    private float koeffPower1 = 1;
+    private float koeffMaxHP1 = 1;
+    private float koeffPay1 = 1;
 
 
     private int waveNumber = 1;
 
-    
+
     void Start()
     {
         //enemyArray[0] = enemyNormalPrefab;
@@ -44,7 +44,7 @@ public class WaveSpawner : MonoBehaviour
     }
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0  || puskaiteKrakena == true)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 || puskaiteKrakena == true)
         {
             if ((countdown <= 0f))
             {
@@ -57,17 +57,23 @@ public class WaveSpawner : MonoBehaviour
             powertower.text[2].GetComponent<textnextwave>().textCooldown = countdown;
             countdown -= Time.deltaTime;
         }
-        koeffMaxHP1=koeffMaxHP*sumPower*koeff;
-        koeffPay1=koeffPay* sumPower * koeff;
-        koeffPower1=koeffPower* sumPower * koeff;
+        koeffMaxHP1 = koeffMaxHP * sumPower * koeff;
+        koeffPay1 = koeffPay * sumPower * koeff;
+        koeffPower1 = koeffPower * sumPower * koeff;
     }
 
 
-    IEnumerator SpawnWave ()
+    IEnumerator SpawnWave()
     {
         int nowPower = 0;
-        while (nowPower<fixPower*(1+kolvo * koeff)) 
+        fixPower = sumPower + upNah;
+        powertower.UpdateEnemyPower((int) Mathf.Round(fixPower * (1 + kolvo * koeff)));
+        while (nowPower < fixPower * (1 + kolvo * koeff))
         {
+            nowPower += SpawnEnemy();
+            yield return new WaitForSeconds(secondsBetweenEnemies);
+        }
+
     }
 
     float TimeBetweenWaves()
@@ -75,22 +81,19 @@ public class WaveSpawner : MonoBehaviour
         if (waveNumber <= 5)
         {
             return 5f;
-        } else
+        }
+        else
         {
             return 7f;
         }
-        
+
     }
 
-    int SpawnEnemy(bool close = false)
+    int SpawnEnemy()
     {
         int n = Random.Range(0, 3);
         int powerEnemy = 0;
         GameObject vrag = null;
-        //if (powerEnemy < towerPower)
-        //{
-        //    SpawnEnemy(true);
-        //}
         switch (n)
         {
             case 0:
@@ -113,11 +116,11 @@ public class WaveSpawner : MonoBehaviour
         }
         return powerEnemy;
     }
-    void improveVrag(GameObject vrag) 
+    void improveVrag(GameObject vrag)
     {
-        vrag.GetComponent<enemy>().power = (int)Mathf.Round(vrag.GetComponent<enemy>().power*(1+koeffPower1));
-        vrag.GetComponent<enemy>().maxhp *= (1+koeffMaxHP1);
-        vrag.GetComponent<enemy>().pay *= (int)Mathf.Round(1+koeffPay1);
+        vrag.GetComponent<enemy>().power = (int)Mathf.Round(vrag.GetComponent<enemy>().power * (1 + koeffPower1));
+        vrag.GetComponent<enemy>().maxhp *= (1 + koeffMaxHP1);
+        vrag.GetComponent<enemy>().pay *= (int)Mathf.Round(1 + koeffPay1);
     }
 
     public static void SkipToNextWave()

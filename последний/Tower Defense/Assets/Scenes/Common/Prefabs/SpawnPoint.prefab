@@ -43,7 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d9131c0369a2742bf664e639148929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyNormalPrefab: {fileID: 7228356296835064800, guid: 79e4f2c7882e88b4db355dc3dd6540c2, type: 3}
-  enemyHeavyPrefab: {fileID: 7228356296835064800, guid: 7d56242c4c7caf146af1d27a44472131, type: 3}
-  enemyQuickPrefab: {fileID: 7228356296835064800, guid: d7ae442ab72c79940b6c140eae1e9c30, type: 3}
-  secondsBetweenWaves: 10
+  enemyNormalPrefab: {fileID: 8635456115329659324, guid: 8766aafe74c75aa408ef40d7db4abd10, type: 3}
+  enemyHeavyPrefab: {fileID: 3332677045811697263, guid: 0847408ca9c01ad4092f9a4fa607185b, type: 3}
+  enemyQuickPrefab: {fileID: 538469216236774793, guid: 5d46872a44991714e90e556b7ed87808, type: 3}
+  sumPower: 5
+  upNah: 1
+  secondsBetweenEnemies: 0.1
+  WaveNumberUI: {fileID: 0}
+  NextWaveButton: {fileID: 0}
+  powertower: {fileID: 0}
+  koeffPower: 1
+  kolvo: 1
+  koeffMaxHP: 1
+  koeff: 0.001
+  koeffPay: 1

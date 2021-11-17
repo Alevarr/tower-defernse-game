@@ -21,6 +21,12 @@ public class ui : MonoBehaviour
         TowerPower += x;
         text[1].text = TowerPower.ToString();
         GameObject.Find("SpawnPoint").GetComponent<WaveSpawner>().sumPower = TowerPower;
+        
+    }
+
+    public void UpdateEnemyPower(int x)
+    {
+        text[0].text = (x).ToString();
     }
     // Update is called once per frame
     void Update()

@@ -34,6 +34,7 @@ public class FinishPoint : MonoBehaviour
 
     public static void GetDamage(float damage)
     {
+        Debug.Log("Bolno");
         hp -= damage;
         healthBar.SetHealth(hp);
 
