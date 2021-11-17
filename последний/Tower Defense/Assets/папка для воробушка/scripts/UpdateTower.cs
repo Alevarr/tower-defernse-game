@@ -67,10 +67,13 @@ public class UpdateTower : MonoBehaviour
 
         if (money.moneyint >= upgradecost)
         {
+            powertower = GameObject.Find("allUI").GetComponent<ui>();
+            powertower.UpdateTowerPower(-towers[decidedTower].GetComponent<tower>().PowerThisTower());
             money.earnMoney(-upgradecost);
             cubiks[decidedTower].allSpendedMoney += upgradecost;
             cubiks[decidedTower].UpgradeTower();
             upgradecost = towers[decidedTower].GetComponent<tower>().upgradeCost;
+           
             UpdateButtons();
 
             if (cubiks[decidedTower].k == 10) { GameObject.Find("upgradeText").GetComponent<Text>().text = "MAX"; GameObject.Find("upgradeText (1)").GetComponent<Text>().text = ""; }

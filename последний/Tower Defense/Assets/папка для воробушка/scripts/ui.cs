@@ -20,7 +20,7 @@ public class ui : MonoBehaviour
     {
         TowerPower += x;
         text[1].text = TowerPower.ToString();
-        GameObject.Find("SpawnPoint").GetComponent<WaveSpawner>().sumPower += TowerPower+offsetPower;
+        GameObject.Find("SpawnPoint").GetComponent<WaveSpawner>().sumPower = TowerPower;
     }
     // Update is called once per frame
     void Update()
