@@ -35,7 +35,7 @@ public class bullet : MonoBehaviour
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
     }
     void HitTarget() 
-    {
+    { 
         var enemy = targetObject.GetComponent<enemy>();
         if (enemy)
         {

@@ -3793,6 +3793,100 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1239899484425200883, guid: 0f3789da28760ea47bd317418eb56004, type: 3}
   m_PrefabInstance: {fileID: 103229645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &104032546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104032550}
+  - component: {fileID: 104032549}
+  - component: {fileID: 104032547}
+  - component: {fileID: 104032548}
+  m_Layer: 5
+  m_Name: timetonextWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &104032547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104032546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!114 &104032548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104032546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5872efa10d2e6d4d9d2b7e576291718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textnextwavetext: {fileID: 104032547}
+  textCooldown: 0
+--- !u!222 &104032549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104032546}
+  m_CullTransparentMesh: 1
+--- !u!224 &104032550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104032546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1178717659}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -9, y: -26}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &129488257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7428,7 +7522,8 @@ MonoBehaviour:
   text:
   - {fileID: 0}
   - {fileID: 666307616}
-  offsetPower: 20
+  - {fileID: 104032547}
+  offsetPower: 5
 --- !u!4 &320161517
 Transform:
   m_ObjectHideFlags: 0
@@ -7441,7 +7536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &323378144
 PrefabInstance:
@@ -27190,6 +27285,7 @@ RectTransform:
   - {fileID: 936110066}
   - {fileID: 391948249}
   - {fileID: 666307614}
+  - {fileID: 104032550}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38660,7 +38756,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1831107386
 PrefabInstance:
@@ -44058,7 +44154,7 @@ GameObject:
   - component: {fileID: 2073118934}
   - component: {fileID: 2073118931}
   m_Layer: 5
-  m_Name: Button
+  m_Name: nextwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46440,13 +46536,49 @@ PrefabInstance:
       value: SpawnPoint
       objectReference: {fileID: 0}
     - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeff
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: kolvo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: upNah
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeffPay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 1744946778329725470, guid: 6c77b2b06e0c1634580b4075db6f4da2, type: 3}
     - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeffPay1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeffMaxHP
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeffPower
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 7228356296835064800, guid: 79e4f2c7882e88b4db355dc3dd6540c2, type: 3}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeffMaxHP1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
+      propertyPath: koeffPower1
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6761304880522902853, guid: 343b6b96c72c2a044b6a0782b1c028c7, type: 3}
       propertyPath: WaveNumberUI
       value: 

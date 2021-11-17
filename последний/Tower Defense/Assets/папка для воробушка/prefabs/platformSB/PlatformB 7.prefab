@@ -222,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeCircle: {fileID: 5632043426850177343}
+  powertower: {fileID: 0}
   road:
     serializedVersion: 2
     m_Bits: 8
@@ -230,7 +231,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetObj: {fileID: 0}
   partToRotate: {fileID: 960104283023653124}
-  range: 100
+  range: 20
   rotspeed: 10
   reload: 0.48
   bulletPrefab: {fileID: 2110809004234198813, guid: 8f1690aeb9313a449a4318ab796316bc, type: 3}
