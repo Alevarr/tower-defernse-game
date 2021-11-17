@@ -19,6 +19,7 @@ public class enemy : MonoBehaviour
     //public FinishPoint finishPoint;
     //public GameObject finishPointt;
     public GameObject finishPoint;
+    private Transform[] wp;
 
 
     void Start()
@@ -26,9 +27,19 @@ public class enemy : MonoBehaviour
         money = GameObject.FindWithTag("money").GetComponent<money>() ;
         finishPoint = GameObject.Find("Finish(Clone)");
         ded.Play();
-        destination = Waypoints.points[0];
+        
         hp = maxhp;
         healthBar.SetMaxHealth(maxhp);
+        int r = Random.Range(1, 3);
+        if (r == 1)
+        {
+            wp = Waypoints.points;
+        } else
+        {
+            wp = Waypoints2.points;
+            
+        }
+        destination = wp[0];
     }
 
     void Update()
@@ -67,7 +78,7 @@ public class enemy : MonoBehaviour
         }
 
         waypointIndex++;
-        destination = Waypoints.points[waypointIndex];
+        destination = wp[waypointIndex];
 
     }
 

@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
     {
         int nowPower = 0;
         sumPower += upNah;
-        while (nowPower<sumPower+upNah) 
+        while (nowPower<sumPower) 
         {
             nowPower+=SpawnEnemy();
             yield return new WaitForSeconds(secondsBetweenEnemies);
@@ -66,11 +66,15 @@ public class WaveSpawner : MonoBehaviour
         
     }
 
-    int SpawnEnemy()
+    int SpawnEnemy(bool close = false)
     {
         int n = Random.Range(0, 3);
         int powerEnemy = 0;
         GameObject vrag = null;
+        //if (powerEnemy < towerPower)
+        //{
+        //    SpawnEnemy(true);
+        //}
         switch (n)
         {
             case 0:

@@ -122,7 +122,7 @@ public class tower : MonoBehaviour
             float distanceToTochka = Vector3.Distance(new Vector3(transform.position.x, transform.position.y, 0f), new Vector3(tochka.transform.position.x, tochka.transform.position.y, 0f));
             if (distanceToTochka <= range) { k++; }
         }
-        int power = (int)Mathf.Round(((k-6)%61/15+1)*damage*(1f/reload)/100); //(k-6) -"количество точек" (damage*(1f/reload)) - урон в секунду деление на 10 чтобы наладить размерность
+        int power = (int)Mathf.Round(((k-6)%61/15+1)*damage*(1f/reload)/10); //(k-6) -"количество точек" (damage*(1f/reload)) - урон в секунду деление на 10 чтобы наладить размерность
         return power;
     }
 

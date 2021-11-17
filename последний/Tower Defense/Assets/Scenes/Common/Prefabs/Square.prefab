@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2025562571088501538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -122,8 +122,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65d181478817d94b9e3487cb0716064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upTower: {fileID: 0}
   hoverColor: {r: 0.3155927, g: 0.8490566, b: 0.3979774, a: 1}
   NoColor: {r: 1, g: 0, b: 0, a: 1}
+  turret: {fileID: 0}
   TBM: {fileID: 0}
   ST: {fileID: 0}
+  platformA: []
+  platformB: []
+  k: 1
+  allSpendedMoney: 0
