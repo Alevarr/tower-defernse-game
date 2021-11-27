@@ -35,9 +35,7 @@ public class tower : MonoBehaviour
         rangeCircle.transform.localScale = new Vector3(1f, 1f, 0f) * range;
         upTower = GameObject.Find("TowerUpgrade");
         updateTowers = upTower.GetComponent<UpdateTower>();
-        GetComponent<CircleCollider2D>().radius = range/2;
         powertower.UpdateTowerPower(PowerThisTower());
-        GetComponent<CircleCollider2D>().enabled = false;
         InvokeRepeating("UpdateTarget", 0f, 0.1f);
         
     }

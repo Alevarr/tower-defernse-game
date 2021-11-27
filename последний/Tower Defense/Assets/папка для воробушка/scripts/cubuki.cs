@@ -44,7 +44,7 @@ public class cubuki : MonoBehaviour
         }
         turret = TBM.GetComponent<TowerButtonManager>().SelectedTowerObj;
         money.earnMoney(-turret.GetComponent<tower>().cost);
-        var _turret=(GameObject)Instantiate(turret, transform.position-new Vector3(0,0,0.00000001f), transform.rotation);
+        var _turret=(GameObject)Instantiate(turret, transform.position-new Vector3(0,0,0.1f), transform.rotation);
         number = NewTowerInOurParty.numberTower;
         _turret.GetComponent<tower>().number = number;
         NewTowerInOurParty.PullTowers(_turret,this);
