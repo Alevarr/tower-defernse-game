@@ -56,7 +56,7 @@ public class cubuki : MonoBehaviour
         {
             case "PlatformB":
                 Destroy(NewTowerInOurParty.towers[number]);
-                var _turret = (GameObject)Instantiate(platformB[k], transform.position - new Vector3(0, 0, 0.00000001f), transform.rotation);
+                var _turret = (GameObject)Instantiate(platformB[k], transform.position - new Vector3(0, 0, 0.1f), transform.rotation);
                 _turret.GetComponent<tower>().number = number;
                 NewTowerInOurParty.towers[number] = _turret;
                 NewTowerInOurParty.DrawRange(number);
@@ -64,7 +64,7 @@ public class cubuki : MonoBehaviour
                 break;
             case "PlatformA1":
                 Destroy(NewTowerInOurParty.towers[number]);
-                var _turretA = (GameObject)Instantiate(platformA[k], transform.position - new Vector3(0, 0, 0.00000001f), transform.rotation);
+                var _turretA = (GameObject)Instantiate(platformA[k], transform.position - new Vector3(0, 0, 0.1f), transform.rotation);
                 _turretA.GetComponent<tower>().number = number;
                 NewTowerInOurParty.towers[number] = _turretA;
                 NewTowerInOurParty.DrawRange(number);
