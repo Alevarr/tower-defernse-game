@@ -25,23 +25,20 @@ public class enemy : MonoBehaviour
     void Start()
     {
         money = GameObject.FindWithTag("money").GetComponent<money>() ;
-        finishPoint = GameObject.Find("Finish(Clone)");
+        finishPoint = GameObject.Find("Finish(Clone)")!=null ? GameObject.Find("Finish(Clone)") : GameObject.Find("Pig(Clone)");
         
         hp = maxhp;
         healthBar.SetMaxHealth(maxhp);
         int r = Random.Range(1, 3);
         if (r == 1)
         {
-            Debug.Log("1 route");
             wp = Waypoints.points;
         } else
         {
-            Debug.Log("2 route");
             wp = Waypoints2.points;
             
         }
 
-        Debug.Log(wp.Length);
 
         destination = wp[0];
     }
@@ -51,7 +48,6 @@ public class enemy : MonoBehaviour
 
         Vector3 dir = destination.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-        Debug.Log(Vector3.Distance(transform.position, finishPoint.transform.position));
         if (Vector3.Distance(transform.position, finishPoint.transform.position) <= 1.5f)
         {           
             DealDamage();
@@ -66,7 +62,6 @@ public class enemy : MonoBehaviour
 
     void DealDamage()
     {
-        Debug.Log("Damage to deal: " + damage);
         //FinishPoint f = FinishPoint.GetComponent<FinishPoint>();
 
         FinishPoint.GetDamage(damage);

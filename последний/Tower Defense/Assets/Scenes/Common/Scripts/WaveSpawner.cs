@@ -29,9 +29,10 @@ public class WaveSpawner : MonoBehaviour
     private float koeffPower1 = 1;
     private float koeffMaxHP1 = 1;
     private float koeffPay1 = 1;
+    public int EnemyPower;
 
 
-    private int waveNumber = 1;
+    public int waveNumber = 1;
 
 
     void Start()
@@ -67,8 +68,9 @@ public class WaveSpawner : MonoBehaviour
     {
         int nowPower = 0;
         fixPower = sumPower + upNah;
-        powertower.UpdateEnemyPower((int) Mathf.Round(fixPower * (1 + kolvo * koeff)));
-        while (nowPower < fixPower * (1 + kolvo * koeff))
+        EnemyPower = (int)Mathf.Round(fixPower * (1 + kolvo * koeff));
+        powertower.UpdateEnemyPower(EnemyPower);
+        while (nowPower < EnemyPower)
         {
             nowPower += SpawnEnemy();
             yield return new WaitForSeconds(secondsBetweenEnemies);
